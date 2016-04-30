@@ -1,0 +1,4 @@
+#!/bin/bash
+
+server_pid=`ps aux | grep java | grep jetty | grep -v grep | awk '{print $2}'`;
+[ -n "$server_pid" ] && echo "Server is running on pid $server_pid" || echo "Server is not running";

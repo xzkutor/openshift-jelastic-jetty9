@@ -1,0 +1,21 @@
+#!/bin/bash
+
+. /etc/jelastic/environment
+
+jetty_pid=`ps aux|grep java|grep jetty|grep -v grep|awk '{print $2}'`;
+
+    if [ -n "$jetty_pid" ] 
+    then
+       	stop_tries=5;
+       	while [ "$stop_tries" -gt 0 ]
+	do
+		jetty_pid=`ps aux|grep java|grep jetty|grep -v grep|awk '{print $2}'`;
+		if [ -z "$jetty_pid" ] 
+			then echo "Jetty9 stopped successfully" && break;
+		fi 
+       		kill $jetty_pid && rm -f /opt/repo/versions/${Version}/jetty.pid;
+       		sleep 3;
+	done
+    else 
+	echo "Jetty9 already stopped";
+    fi
