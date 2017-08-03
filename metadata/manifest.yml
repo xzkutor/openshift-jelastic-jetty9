@@ -11,7 +11,7 @@ Cartridge-Vendor: Jelastic
 Categories:
   - service
   - embedded
-Source-Url: https://github.com/jelastic-public-cartridges/openshift-jelastic-jetty9.git
+Source-Url: https://github.com/xzkutor/openshift-jelastic-jetty9.git
 Website: http://jelastic.com/
 Help-Topics:
   "Developer Center": https://jelastic.com
@@ -39,7 +39,7 @@ Scaling:
 Endpoints:
   - Private-IP-Name:   APP_HOST
     Private-Port-Name: APP_PORT
-    Private-Port:      8080
+    Private-Port:      80
     Public-Port-Name:  APP_PROXY_PORT
   - Private-IP-Name:   AJP_HOST
     Private-Port-Name: AJP_PORT
